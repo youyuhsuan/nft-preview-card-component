@@ -1,0 +1,172 @@
+@mixin Mobile {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+// Colors
+// Primary
+$Softblue: hsl(215, 51%, 70%);
+$Cyan: hsl(178, 100%, 50%);
+$Cyan-500: hsla(178, 100%, 50%, 0.5);
+
+
+// Neutral
+$Verydarkblue-mainBG: hsl(217, 54%, 11%);
+$Verydarkblue-cardBG: hsl(216, 50%, 16%);
+$Verydarkblue-line: hsl(215, 32%, 27%);
+$White: hsl(0, 0%, 100%);
+
+@font-face {
+  font-family: "Outfit", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Outfit");
+}
+
+body {
+  background: url("/design/desktop-design.jpg") no-repeat;
+  font-family: "Outfit", sans-serif;
+}
+
+.container {
+  background-color: $Verydarkblue-mainBG;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.card {
+  background-color: $Verydarkblue-cardBG;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  height: 595px;
+  padding: 20px;
+  border-radius: 4%;
+  margin-bottom: 4%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card-image {
+  position: relative;
+  max-width: 100%;
+  margin-bottom: 8.5%;
+  border-radius: 3%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  &:hover {
+    .card-image-overlay {
+      visibility: visible;
+    }
+  }
+}
+.card-image-equilibrium{
+  border-radius: 3%;
+}
+
+.card-image-overlay {
+  border-radius: 3%;
+
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $Cyan-500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  color: $White;
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  margin-bottom: 4%;
+  &:hover {
+    color: $Cyan;
+  }
+}
+
+.card-text {
+  color: $Softblue;
+  font-size: 18px;
+  word-break: break-all;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin-bottom: 1.2em;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+}
+
+.card-price {
+  display: inline-block;
+  .card-icon-price {
+    vertical-align: middle;
+  }
+
+  .card-span-price {
+    color: $Cyan;
+    font-weight: 600;
+  }
+}
+
+.card-clock {
+  display: inline-block;
+  .card-icon-clock {
+    vertical-align: middle;
+  }
+
+  .card-span-clock {
+    color: $Softblue;
+    font-weight: 600;
+  }
+}
+
+.solid {
+  background-color: $Verydarkblue-line;
+  margin-bottom: 1em;
+}
+
+.card-avater {
+  display: flex;
+  align-items: center;
+}
+
+.card-image-avatar {
+  width: 11%;
+  border-radius: 50%;
+  border-width: 0.1em;
+  border-style: solid;
+  border-color: $White;
+  margin-right: 1em;
+}
+
+.card-creation {
+  letter-spacing: -0.04em;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.card-creationof {
+  color: $Softblue;
+}
+
+.card-name {
+  color: $White;
+  &:hover {
+    color: $Cyan;
+  }
+}
+
+.attribution {
+  color: $Softblue;
+}
